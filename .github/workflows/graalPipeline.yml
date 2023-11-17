@@ -12,17 +12,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Set up GraalVM
+      - name: Setup GraalVM
         uses: graalvm/setup-graalvm@v1
         with:
           java-version: '17'
           distribution: 'graalvm'
-      - name: Compile code
-        run: mvn compile
-      - name: Run tests
-        run: mvn test
-      - name: Create native profile
-        run: mvn install -Pnative
+      - name: Compile and/or test our code
+        run: mvn clean install
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
