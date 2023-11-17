@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
           distribution: 'graalvm'
       - name: Compile and/or test our code
-        run: mvn clean install
+        run: mvn install -Pnative
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
