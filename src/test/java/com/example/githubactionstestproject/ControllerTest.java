@@ -24,4 +24,9 @@ class ControllerTest {
         MvcResult result = mockMvc.perform(get("/")).andExpect(status().isOk()).andReturn();
         assertEquals("Goodbye Cruel World!", result.getResponse().getContentAsString());
     }
+    @Test
+    void helloWorld() throws Exception {
+        MvcResult result = mockMvc.perform(get("/")).andExpect(status().isOk()).andReturn();
+        assertEquals("hello World!", result.getResponse().getContentAsString());
+    }
 }
