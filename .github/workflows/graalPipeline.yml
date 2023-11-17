@@ -19,3 +19,8 @@ jobs:
           distribution: 'graalvm'
       - name: Compile and/or test our code
         run: mvn clean install
+      - name: Upload binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: myCruelBinary
+          path: https://github.com/brunbe/github-actions-test-project.git
